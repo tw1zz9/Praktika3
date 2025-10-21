@@ -13,6 +13,9 @@ namespace pr3
             
             ListOfClasses list = new ListOfClasses();
             list.WorkWithListOfClasses();*/
+
+            OBSCollection obs = new OBSCollection();
+            obs.WorkWithOBSCollection();
         }
     }
 }
