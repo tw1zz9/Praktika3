@@ -1,30 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.Design;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace pr3
 {
-    public class LIST
+    internal class ListOfClasses
     {
-        private List<char> chars;
-        private Dictionary<int, char> dChars;
+        private List<AudioAndVideo> audioAndVideos;
+        private Dictionary<int, AudioAndVideo> dAudioAndVideos;
 
-        public LIST()
+        public ListOfClasses()
         {
-            chars = new List<char>();
-            dChars = new Dictionary<int, char>();
+            audioAndVideos = new List<AudioAndVideo>();
+            dAudioAndVideos = new Dictionary<int, AudioAndVideo>();
         }
 
-        public void WorkWithList()
+        public void WorkWithListOfClasses()
         {
-            Console.WriteLine("\t\t\tРабота с коллекцией char List\n\n");
+            Console.WriteLine("\t\t\tРабота с коллекцией AudioAndVideo List\n\n");
             Console.WriteLine("Из скольки элементов будет состоять коллекция (заполняется случайными числами):");
             var n = InputInt();
             AddNumOfElementsToList(n);
-            
+
             // Вывод коллекции
             PrintCollectionOfList();
 
@@ -58,49 +58,65 @@ namespace pr3
             if (take)
             {
                 n = InputInt();
-                Console.WriteLine($"Найденная пара: ключ - {n}, значение - {dChars[n]}");
+                Console.WriteLine($"Найденная пара: ключ - {n}, значение - {dAudioAndVideos[n]}");
             }
             else
             {
-                char c = char.Parse(Console.ReadLine());
-                var res = dChars.Where(x => x.Value == c);
+                int price = int.Parse(Console.ReadLine());
+                var res = dAudioAndVideos.Where(x => x.Value.Price == price);
                 Console.WriteLine("Найденные значения");
                 foreach (var item in res)
                 {
                     Console.WriteLine($"\"{item}\"");
                 }
             }
+
+            Console.WriteLine("\t\t\tРабота с интерфейсами\n\n");
+            ProccesInterfacesWork();
+        }
+
+        private void ProccesInterfacesWork()
+        {
+            AudioAndVideo l1 = new AudioAndVideo();
+            AudioAndVideo l2 = l1.Clone();
+            Console.WriteLine("Результат клонирования\n" + $"{l2}");
+            Console.WriteLine("Результат сравнения первого и второго экземпляров: " + $"{l2.CompareTo(l1)}");
+
+            AudioAndVideo l3 = new AudioAndVideo("Name", 123456);
+            Console.WriteLine("Результат сравнения второго и третьего экземпляров: " + $"{l2.CompareTo(l3)}");
         }
 
         private void AddNumOfElementsToList(int n)
         {
             Random rndm = new Random();
 
-            for (int i = 0; i < n; i++)
+            for (int i = 1; i <= n; i++)
             {
-                char s = (char)rndm.Next(0, 100);
-                chars.Add(s);
+                string manufacturer = "Name" + i;
+                int price = (int)rndm.Next(300, 7000000);
+                AudioAndVideo tech = new(manufacturer, price);
+                audioAndVideos.Add(tech);
             }
         }
 
         private void PrintCollectionOfList()
         {
-            foreach (var item in chars)
-                Console.Write("\"" + item + "\", ");
+            foreach (var item in audioAndVideos)
+                Console.WriteLine(item.ToString()); 
             Console.WriteLine();
         }
 
         private void PrintCollectionOfDictionary()
         {
-            foreach(var item in dChars)
-                Console.WriteLine("\"" + item + "\", ");
+            foreach (var item in dAudioAndVideos)
+                Console.WriteLine(item.ToString());
             Console.WriteLine();
         }
 
         private void DeleteNumOfItemsInList(int n)
         {
             for (int i = 0; i < n; i++)
-                chars.Remove(chars[i]);
+                audioAndVideos.Remove(audioAndVideos[i]);
         }
 
         private int InputInt()
@@ -116,13 +132,11 @@ namespace pr3
 
         private void CreateDictionary()
         {
-            for (int i = 0; i < chars.Count(); i++)
+            for (int i = 0; i < audioAndVideos.Count(); i++)
             {
                 var generatedKey = i + 1;
-                dChars.Add(generatedKey, chars[i]);
+                dAudioAndVideos.Add(generatedKey, audioAndVideos[i]);
             }
         }
-
-
     }
 }
