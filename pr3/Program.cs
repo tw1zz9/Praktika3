@@ -8,8 +8,10 @@ namespace pr3
     {
         static void Main(string[] args)
         {
-            ArList arrList = new ArList();
-            arrList.WorkWithArrayLIst();
+            /*ArList arrList = new ArList();
+            arrList.WorkWithArrayLIst();*/
+            LIST list = new LIST();
+            list.WorkWithList();
         }
     }
 }
