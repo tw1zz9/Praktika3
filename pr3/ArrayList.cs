@@ -31,9 +31,14 @@ namespace pr3
             // Удаление по номеру
             int dInd = 0;
             Console.WriteLine("\nВыберите номер элемента для удаления: ");
-            if (int.TryParse(Console.ReadLine(), out dInd) && dInd > 0)
-                dInd -= 1;
-            else dInd = 0;
+            while (true)
+            {
+                if (int.TryParse(Console.ReadLine(), out dInd) && dInd > 0) {
+                    dInd -= 1;
+                    break;
+                }
+                else Console.WriteLine("Неверно введён индекс. Повторите:");
+            }
             uncommunicatedСollection.Remove(uncommunicatedСollection[dInd]);
 
             // Вывод количества элементов и самой коллекции
