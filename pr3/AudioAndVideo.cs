@@ -58,9 +58,9 @@ namespace pr3
             Init(other.Manufacturer, other.Price);
         }
 
-        public AudioAndVideo Clone()
+        public object Clone()
         {
-            return (AudioAndVideo)this.MemberwiseClone();
+            return this.MemberwiseClone();
         }
 
         public int CompareTo(AudioAndVideo other)
