@@ -78,7 +78,7 @@ namespace pr3
         private void ProccesInterfacesWork()
         {
             AudioAndVideo l1 = new AudioAndVideo();
-            AudioAndVideo l2 = l1.Clone();
+            AudioAndVideo l2 = (AudioAndVideo)l1.Clone();
             Console.WriteLine("Результат клонирования\n" + $"{l2}");
             Console.WriteLine("Результат сравнения первого и второго экземпляров: " + $"{l2.CompareTo(l1)}");
 
