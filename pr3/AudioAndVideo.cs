@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace pr3
 {
-    public class AudioAndVideo
+    public class AudioAndVideo : ICloneable, IComparable<AudioAndVideo>, IComparer<AudioAndVideo>
     {
         private const int MinPrice = 300;
         private const int MaxPrice = 7000000;
@@ -56,6 +56,27 @@ namespace pr3
         public AudioAndVideo(AudioAndVideo other)
         {
             Init(other.Manufacturer, other.Price);
+        }
+
+        public AudioAndVideo Clone()
+        {
+            return (AudioAndVideo)this.MemberwiseClone();
+        }
+
+        public int CompareTo(AudioAndVideo other)
+        {
+            if ((other == null) || (this.Price > other.Price)) return 1;
+            if (this.Price < other.Price) return -1;
+            return 0;
+        }
+
+        public int Compare(AudioAndVideo x, AudioAndVideo y)
+        {
+            if (x == null && y == null) return 0;
+            if (x == null) return -1;
+            if (y == null) return 1;
+        
+            return x.Price.CompareTo(y.Price);
         }
 
         protected void Init(string manufacturer, int price)

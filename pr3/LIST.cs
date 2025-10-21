@@ -20,7 +20,7 @@ namespace pr3
 
         public void WorkWithList()
         {
-            Console.WriteLine("\t\t\tРабота с коллекцией List\n\n");
+            Console.WriteLine("\t\t\tРабота с коллекцией char List\n\n");
             Console.WriteLine("Из скольки элементов будет состоять коллекция (заполняется случайными числами):");
             var n = InputInt();
             AddNumOfElementsToList(n);
