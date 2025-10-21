@@ -9,9 +9,10 @@ namespace pr3
         static void Main(string[] args)
         {
             /*ArList arrList = new ArList();
-            arrList.WorkWithArrayLIst();*/
-            LIST list = new LIST();
-            list.WorkWithList();
+            arrList.WorkWithArrayLIst();
+            
+            ListOfClasses list = new ListOfClasses();
+            list.WorkWithListOfClasses();*/
         }
     }
 }
