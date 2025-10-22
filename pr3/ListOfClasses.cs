@@ -83,7 +83,7 @@ namespace pr3
             Console.WriteLine("Результат сравнения первого и второго экземпляров: " + $"{l2.CompareTo(l1)}");
 
             AudioAndVideo l3 = new AudioAndVideo("Name", 123456);
-            Console.WriteLine("Результат сравнения второго и третьего экземпляров: " + $"{l2.CompareTo(l3)}");
+            Console.WriteLine("Результат сравнения второго и третьего экземпляров: " + $"{l2.CompareTo(l3)}\n");
         }
 
         private void AddNumOfElementsToList(int n)

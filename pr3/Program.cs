@@ -11,14 +11,14 @@ namespace pr3
             ArList arrList = new ArList();
             arrList.WorkWithArrayLIst();
 
-            LIST list = new LIST();
-            list.WorkWithList();
+            //LIST list = new LIST();
+            //list.WorkWithList();
 
-            ListOfClasses listOfClasses = new ListOfClasses();
-            listOfClasses.WorkWithListOfClasses();
+            //ListOfClasses listOfClasses = new ListOfClasses();
+            //listOfClasses.WorkWithListOfClasses();
 
-            OBSCollection obs = new OBSCollection();
-            obs.WorkWithOBSCollection();
+            //OBSCollection obs = new OBSCollection();
+            //obs.WorkWithOBSCollection();
         }
     }
 }
