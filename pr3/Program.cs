@@ -8,11 +8,14 @@ namespace pr3
     {
         static void Main(string[] args)
         {
-            /*ArList arrList = new ArList();
+            ArList arrList = new ArList();
             arrList.WorkWithArrayLIst();
-            
-            ListOfClasses list = new ListOfClasses();
-            list.WorkWithListOfClasses();*/
+
+            LIST list = new LIST();
+            list.WorkWithList();
+
+            ListOfClasses listOfClasses = new ListOfClasses();
+            listOfClasses.WorkWithListOfClasses();
 
             OBSCollection obs = new OBSCollection();
             obs.WorkWithOBSCollection();
